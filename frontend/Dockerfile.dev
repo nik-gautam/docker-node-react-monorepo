@@ -1,0 +1,17 @@
+FROM node
+
+RUN mkdir -p /app/frontend && chown -R node:node /app/frontend
+
+WORKDIR '/app/frontend'
+
+COPY --chown=node:node ./package.json ./
+
+USER node
+
+RUN npm install
+
+RUN mkdir -p /app/frontend/node_modules/.cache
+
+COPY --chown=node:node . .
+
+CMD ["npm", "start"]
