@@ -1,7 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import _ from "lodash";
 
 function App() {
+  console.log(_.add(2, 3));
+
   return (
     <div className="App">
       <header className="App-header">
